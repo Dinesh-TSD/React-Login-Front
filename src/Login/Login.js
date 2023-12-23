@@ -36,11 +36,7 @@ const Login = () => {
     onSubmit: async (values) => {
       try {
         //post method create new Account
-        let res = await axios.post("https://dinesh-vf7o.onrender.com/api/v1/login", values,{
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        });
+        let res = await axios.post("https://dinesh-vf7o.onrender.com/api/v1/login", values);
         localStorage.setItem("token", res.data.token);
         navigate("/portal/dashboard");
         closemeg();

@@ -38,7 +38,7 @@ const ResetPassword = () => {
       onSubmit: async (values) => {
         try {
           //post method create new Account
-          await axios.post(`/api/v1/password/reset/${params.token}`, values);
+          await axios.post(`https://dinesh-vf7o.onrender.com/api/v1/password/reset/${params.token}`, values);
 
           navigate("/");
           closemeg();

@@ -41,7 +41,7 @@ const Register = () => {
     onSubmit: async (values) => {
       try {
         //post method create new Account
-        let res = await axios.post("/api/v1/register",values);
+        let res = await axios.post("https://dinesh-vf7o.onrender.com/api/v1/register",values);
         navigate("/");
         closemeg();
       } catch (error) {

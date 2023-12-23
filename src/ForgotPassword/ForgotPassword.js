@@ -2,17 +2,10 @@ import axios from "axios";
 import { useFormik } from "formik";
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 import './ForgotPassword.css'
 
 const ForgotPassword = () => {
   const navigate = useNavigate();
-
-  const closemeg = () =>
-    toast(" Account created Successfuly", {
-      type: toast.TYPE.SUCCESS,
-      autoClose: 1000,
-    });
 
   const formik = useFormik({
     initialValues: {
@@ -30,9 +23,8 @@ const ForgotPassword = () => {
     onSubmit: async (values) => {
       try {
         //post method create new Account
-        await axios.post("/api/v1/password/forgot", values);
+        await axios.post("https://dinesh-vf7o.onrender.com/api/v1/password/forgot", values);
 
-        closemeg();
       } catch (error) {
         console.log(error);
       }

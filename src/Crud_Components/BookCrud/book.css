@@ -1,0 +1,20 @@
+.card-holder{
+    background-color: rgb(243, 238, 255) !important;
+    margin-top: 150px !important;
+    position: absolute;
+    top: 0;
+}
+.books-list{
+    background-color: rgb(240, 237, 255) !important;
+    width: 100%;
+    color: rgb(100, 48, 255);
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600 !important;
+    font-size: 30px;
+    margin-top: 70px !important;
+    position: absolute;
+    top: 0;
+}

@@ -1,0 +1,19 @@
+.container-fluid{
+    background: linear-gradient(rgb(203, 204, 244),rgb(253, 253, 255),rgb(207, 213, 255));
+    height: 85vh !important;
+    margin-top: 60px !important;
+    position: absolute;
+    top: 10px !important;
+}
+.head h1{
+    color: rgb(88, 76, 255);
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.head-img img{
+    height: 180px;
+    width: 180px;
+}
+.create{
+    margin-left: 2rem;
+}

@@ -1,0 +1,34 @@
+.header{
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+}
+.topbar{
+    width: 100%;
+    background-color: rgb(82, 59, 234);
+
+}
+.navlinks{
+    color: white;
+    margin-left: 4rem;
+    text-decoration: none !important;
+
+}
+.navlinks:hover{
+    color: rgb(211, 220, 255);
+    text-decoration: underline !important;
+}
+.pages{
+    margin-left: 4rem;
+}
+.active{
+    color: rgb(255, 255, 255);
+    text-decoration: underline !important;
+}
+ul li .pname{
+    color: white !important;
+}
+.logout{
+    border-radius: 2px;
+    margin-left: 40px;
+    border: none;
+}

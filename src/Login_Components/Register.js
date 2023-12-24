@@ -3,10 +3,9 @@ import axios from "axios";
 import { useFormik } from "formik";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import "./Register.css"
+import "./Login.css";
 
 const Register = () => {
-
   const navigate = useNavigate();
 
   const closemeg = () =>
@@ -19,7 +18,7 @@ const Register = () => {
     initialValues: {
       name: "",
       email: "",
-      password: ""
+      password: "",
     },
     validate: (values) => {
       let errors = {};
@@ -41,7 +40,10 @@ const Register = () => {
     onSubmit: async (values) => {
       try {
         //post method create new Account
-        let res = await axios.post("https://dinesh-vf7o.onrender.com/api/v1/register",values);
+        await axios.post(
+          "https://dinesh-vf7o.onrender.com/api/v1/register",
+          values
+        );
         navigate("/");
         closemeg();
       } catch (error) {
@@ -52,17 +54,19 @@ const Register = () => {
 
   return (
     <>
-      <div className=" author-form">
       <div className="head">Dinesh Soft Tech</div>
+      <div className=" lg">
         <form className="form-bg mt-4 " onSubmit={formik.handleSubmit}>
           <h1>Register</h1>
-          <div className="row">
-            <div className="col-lg-10 ms-5">
+
+          <div className="row justify-content-center">
+            <div className="col-8 col-lg-9 col-sm-9 col-md-9 col-xl-10">
               <label>Name</label>
               <input
                 type="text"
                 className="form-control"
                 name="name"
+                placeholder="Enter your name"
                 value={formik.values.name}
                 onChange={formik.handleChange}
               />
@@ -70,13 +74,16 @@ const Register = () => {
                 <div className="text-danger">{formik.errors.name}</div>
               ) : null}
             </div>
+          </div>
 
-            <div className="col-lg-10 ms-5">
+          <div className="row justify-content-center">
+            <div className="col-8 col-lg-9 col-sm-9 col-md-9 col-xl-10">
               <label>Email</label>
               <input
                 type="email"
                 className="form-control"
                 name="email"
+                placeholder="Enter your email"
                 value={formik.values.email}
                 onChange={formik.handleChange}
               />
@@ -84,13 +91,16 @@ const Register = () => {
                 <div className="text-danger">{formik.errors.email}</div>
               ) : null}
             </div>
+          </div>
 
-            <div className="col-lg-10 ms-5">
+          <div className="row justify-content-center">
+            <div className="col-8 col-lg-9 col-sm-9 col-md-9 col-xl-10">
               <label>Password</label>
               <input
                 type="text"
                 className="form-control"
                 name="password"
+                placeholder="Enter your password"
                 value={formik.values.password}
                 onChange={formik.handleChange}
               />
@@ -99,18 +109,22 @@ const Register = () => {
                 <div className="text-danger">{formik.errors.password}</div>
               ) : null}
             </div>
+          </div>
 
-            <div className="col-lg-10 ms-5">
+          <div className="row justify-content-center">
+            <div className="col-8 col-lg-9 col-sm-9 col-md-9 col-xl-10">
               <input
                 type="submit"
                 className="btn btn-primary mt-3"
                 value={"Register"}
               />
             </div>
+          </div>
 
-            <div className="col-lg-10 ms-5">
+          <div className="row justify-content-center">
+            <div className="col-8 col-lg-9 col-sm-9 col-md-9 col-xl-10">
               <br></br>
-              <p className="forgot" >Already have an account ? Click Login</p>
+              <p className="forgot">Already have an account ? Click Login</p>
               <Link className="btn btn-primary forgot mt-3" to="/">
                 Login
               </Link>

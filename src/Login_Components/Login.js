@@ -4,7 +4,7 @@ import { useFormik } from "formik";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { isAuthenticated } from "../authenticate/authenticate";
-import './Login.css'
+import "./Login.css";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -36,7 +36,10 @@ const Login = () => {
     onSubmit: async (values) => {
       try {
         //post method create new Account
-        let res = await axios.post("https://dinesh-vf7o.onrender.com/api/v1/login", values);
+        let res = await axios.post(
+          "https://dinesh-vf7o.onrender.com/api/v1/login",
+          values
+        );
         localStorage.setItem("token", res.data.token);
         navigate("/portal/dashboard");
         closemeg();
@@ -54,17 +57,19 @@ const Login = () => {
 
   return (
     <>
+      <div className="head ">Dinesh Soft Tech</div>
       <div className="lg ">
-        <div className="head">Dinesh Soft Tech</div>
         <form className="form-bg  mt-3" onSubmit={formik.handleSubmit}>
           <h1>Login</h1>
-          <div className="row">
-            <div className="col-lg-10 ms-5">
+
+          <div className="row justify-content-center">
+            <div className="col-8 col-lg-9 col-sm-9 col-md-9 col-xl-10">
               <label>Email</label>
               <input
                 type="email"
                 className="form-control"
                 name="email"
+                placeholder="Enter yor email"
                 value={formik.values.email}
                 onChange={formik.handleChange}
               />
@@ -72,13 +77,16 @@ const Login = () => {
                 <div className="text-danger">{formik.errors.email}</div>
               ) : null}
             </div>
+          </div>
 
-            <div className="col-lg-10 ms-5">
+          <div className="row justify-content-center">
+            <div className="col-8 col-lg-9 col-sm-9 col-md-9 col-xl-10">
               <label>Password</label>
               <input
                 type="text"
                 className="form-control"
                 name="password"
+                placeholder="Enter your password"
                 value={formik.values.password}
                 onChange={formik.handleChange}
               />
@@ -87,21 +95,27 @@ const Login = () => {
                 <div className="text-danger">{formik.errors.password}</div>
               ) : null}
             </div>
-            <div className="col-lg-10 ms-5">
+          </div>
+
+          <div className="row justify-content-center">
+            <div className="col-8 col-lg-9 col-sm-9 col-md-9 col-xl-10">
               <Link className="btn forgot mt-3" to="/forgot/password">
                 Forgot Password ?
               </Link>
             </div>
-            <div className="col-lg-10 ms-5">
+          </div>
+
+          <div className="row justify-content-center">
+            <div className="col-8 col-lg-9 col-sm-9 col-md-9 col-xl-10">
               <input
                 type="submit"
                 className="btn btn-primary mt-3"
                 value={"Login"}
               />
             </div>
-            <div className="col-lg-10 ms-5">
+            <div className="col-8 col-lg-9 col-sm-9 col-md-9 col-xl-10">
               <br></br>
-              <p className="forgot" >Don't have an account ? Click Register</p>
+              <p className="forgot">Don't have an account ? Click Register</p>
               <Link className="btn btn-primary forgot mt-3" to="/register">
                 Register
               </Link>

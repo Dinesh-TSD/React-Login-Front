@@ -1,21 +1,21 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Home from "./pages/Home";
-import CartPage from "./pages/CartPage";
-import Order from "./pages/Order";
-import Dashboard from "./pages/Dashboard";
-import Books from "./pages/Books";
+import Home from "./Nav_Components/Home";
+import CartPage from "./Nav_Components/CartPage";
+import Order from "./Nav_Components/Order";
+import Dashboard from "./Nav_Components/Dashboard";
+import Books from "./Nav_Components/Books";
 import CreateAuthor from "./Crud_Components/AuthorCrud/CreateAuthor";
 import CreateBook from "./Crud_Components/BookCrud/CreateBook";
 import EditAuthor from "./Crud_Components/AuthorCrud/EditAuthor";
 import ViewAuthor from "./Crud_Components/AuthorCrud/ViewAuthor";
 import EditBook from "./Crud_Components/BookCrud/EditBook";
 import ViewBook from "./Crud_Components/BookCrud/ViewBook";
-import Login from "./Login/Login";
+import Login from "./Login_Components/Login";
 import Portal from "./Portal/Portal";
-import Register from "./Register/Register";
-import ForgotPassword from "./ForgotPassword/ForgotPassword";
-import ResetPassword from "./ResetPassword/ResetPassword";
+import Register from "./Login_Components/Register";
+import ForgotPassword from "./Login_Components/ForgotPassword";
+import ResetPassword from "./Login_Components/ResetPassword";
 
 function App() {
   return (
